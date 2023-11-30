@@ -9,10 +9,9 @@ sliderItems.forEach((slide, index) => {
   if (index !== 0) slide.classList.add("hidden");
 
   slide.dataset.index = index;
-
   sliderItems[0].setAttribute("data-active", "");
 
-  slide.addEventListener("click", function () {
+  slide.onclick = () => {
     slide.classList.add("hidden");
     slide.removeAttribute("data-active");
 
@@ -21,7 +20,7 @@ sliderItems.forEach((slide, index) => {
     const nextSlide = slider.querySelector(`[data-index="${nextSlideIndex}" ]`);
     nextSlide.classList.remove("hidden");
     nextSlide.setAttribute("data-active", "");
-  });
+  };
 });
 
 nextButton.onclick = function () {
